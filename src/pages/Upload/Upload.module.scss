@@ -1,0 +1,59 @@
+.container {
+    max-width: 600px;
+    margin: 2rem auto;
+    padding: 2rem;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    text-align: center;
+  }
+  
+  h2 {
+    margin-bottom: 1rem;
+  }
+  
+  .dropZone {
+    border: 2px dashed #004e98;
+    padding: 2rem;
+    border-radius: 6px;
+    cursor: pointer;
+    position: relative;
+  }
+  
+  .fileInput {
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+    cursor: pointer;
+  }
+  
+  .previewContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+  }
+  
+  .preview {
+    max-width: 300px;
+    border-radius: 6px;
+  }
+  
+  button {
+    background-color: #004e98;
+    color: white;
+    border: none;
+    padding: 0.6rem 1rem;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  button:hover {
+    background-color: #003c7a;
+  }
+  
+  .error {
+    color: red;
+    margin-top: 1rem;
+  }
+  
