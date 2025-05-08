@@ -1,3 +1,12 @@
+.mainContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 100vw;
+  background-color: #f5f7fa;
+}
+
 .container {
     max-width: 600px;
     margin: 2rem auto;
@@ -24,6 +33,9 @@
     border-radius: 4px;
     font-family: inherit;
     resize: vertical;
+    transition: border-color 0.3s;
+    background-color: white;
+    color: #777;
   }
   
   span {

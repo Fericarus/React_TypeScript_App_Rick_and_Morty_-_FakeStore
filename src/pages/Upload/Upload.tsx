@@ -1,9 +1,7 @@
 import { useState } from "react";
 import type { DragEvent, ChangeEvent } from "react";
 import BackButton from "../../components/BackButton/BackButton";
-
 import styles from "./Upload.module.scss";
-
 const acceptedTypes = ["image/png", "image/jpeg", "image/jpg"];
 
 export default function Upload() {
@@ -11,17 +9,20 @@ export default function Upload() {
 	const [preview, setPreview] = useState<string | null>(null);
 	const [error, setError] = useState("");
 
+	// Función para manejar el arrastre de archivos
 	const handleDrop = (e: DragEvent<HTMLDivElement>) => {
 		e.preventDefault();
 		const file = e.dataTransfer.files[0];
 		validateFile(file);
 	};
 
+	// Manejar el cambio de archivo desde el input
 	const handleFileChange = (e: ChangeEvent<HTMLInputElement>) => {
 		const file = e.target.files?.[0];
 		if (file) validateFile(file);
 	};
 
+	// Validar el archivo y establecer el preview
 	const validateFile = (file: File) => {
 		if (!acceptedTypes.includes(file.type)) {
 			setError("Formato no válido. Solo PNG, JPG o JPEG");
@@ -32,6 +33,7 @@ export default function Upload() {
 		setError("");
 	};
 
+	// Limpiar el preview y el archivo al eliminar
 	const handleRemove = () => {
 		setImage(null);
 		setPreview(null);

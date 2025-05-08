@@ -6,6 +6,7 @@ import * as yup from "yup";
 import axios from "axios";
 import styles from "./CreateProduct.module.scss";
 
+// Interface FormInputs 
 interface FormInputs {
 	title: string;
 	price: number;
@@ -13,6 +14,7 @@ interface FormInputs {
 	image: string;
 }
 
+// Validación del schema usando Yup
 const schema = yup.object().shape({
 	title: yup
 		.string()
@@ -30,6 +32,8 @@ const schema = yup.object().shape({
 });
 
 export default function CreateProduct() {
+
+	// useForm hook para manejar el formulario
 	const {
 		register,
 		handleSubmit,
@@ -39,6 +43,7 @@ export default function CreateProduct() {
 		resolver: yupResolver(schema),
 	});
 
+	// Función para manejar el envío del formulario
 	const onSubmit = async (data: FormInputs) => {
 		try {
 			const response = await axios.post("https://fakestoreapi.com/products", data);
@@ -55,18 +60,23 @@ export default function CreateProduct() {
 			<div className={styles.container}>
 				<h2>Crear nuevo producto</h2>
 				<form onSubmit={handleSubmit(onSubmit)} className={styles.form}>
+
+					{/* Titulo */}
 					<label>Título</label>
 					<input {...register("title")} />
 					{errors.title && <span>{errors.title.message}</span>}
 
+					{/* Precio */}
 					<label>Precio</label>
 					<input {...register("price")} type="number" step="0.01" />
 					{errors.price && <span>{errors.price.message}</span>}
 
+					{/* Descripción */}
 					<label>Descripción</label>
 					<textarea {...register("description")} />
 					{errors.description && <span>{errors.description.message}</span>}
 
+					{/* Imagen */}
 					<label>Imagen (URL o nombre)</label>
 					<input {...register("image")} />
 					{errors.image && <span>{errors.image.message}</span>}

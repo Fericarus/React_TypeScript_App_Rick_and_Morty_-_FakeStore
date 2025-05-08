@@ -34,7 +34,7 @@
   
   .card {
     background: white;
-    border: 1px solid #eee;
+    border: 1px solid #ccc;
     border-radius: 8px;
     padding: 1rem;
     text-align: center;
@@ -49,16 +49,24 @@
   }
   
   .card img {
-    height: 120px;
+    height: 86px;
     object-fit: contain;
+    width: 100%;
     margin-bottom: 0.5rem;
   }
   
   .info h3 {
     font-size: 1rem;
     margin: 0.5rem 0;
+    color: #004e98;
   }
   
+  .info p:first-child {
+    margin: 0.2rem 0;
+    font-size: 1rem;
+    color: #2a8703;
+  }
+
   .info p {
     margin: 0.2rem 0;
     font-size: 0.9rem;
@@ -74,7 +82,7 @@
   .pagination button {
     padding: 0.4rem 0.8rem;
     border: 1px solid #ccc;
-    background: white;
+    background: #004e98;
     cursor: pointer;
   }
   
@@ -83,4 +91,6 @@
     color: white;
     border: none;
   }
+
+  
   

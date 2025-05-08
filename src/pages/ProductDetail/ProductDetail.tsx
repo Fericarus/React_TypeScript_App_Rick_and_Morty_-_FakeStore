@@ -47,7 +47,6 @@ export default function ProductDetail() {
 							<strong>Categoría:</strong> {product.category}
 						</p>
 						<p className={styles.description}>{product.description}</p>
-						<button onClick={() => navigate(-1)}>Volver</button>
 					</div>
 				</div>
 			</div>
