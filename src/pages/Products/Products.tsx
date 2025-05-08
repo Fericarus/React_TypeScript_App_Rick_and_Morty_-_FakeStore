@@ -36,6 +36,7 @@ export default function Products() {
 
 		// Obtener los productos de la API
 		axios.get("https://fakestoreapi.com/products").then((res) => {
+			console.log(res.data);
 			setProducts(res.data);
 			setFiltered(res.data);
 		});

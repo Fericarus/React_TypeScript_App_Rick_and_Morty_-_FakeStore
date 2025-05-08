@@ -43,6 +43,8 @@ export default function CreateProduct() {
 		resolver: yupResolver(schema),
 	});
 
+	console.log(errors);
+
 	// Función para manejar el envío del formulario
 	const onSubmit = async (data: FormInputs) => {
 		try {
